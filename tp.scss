@@ -1,0 +1,38 @@
+body{
+  font-family: Lato,Arial,sans-serif;
+  text-align: center;
+  min-width: 320px;
+  background: url(https://discworld.com/management/wp-content/themes/hex/library/images/background-terry.jpg) center no-repeat;
+}
+#title {
+  color: #ccc;
+  font-weight: 100;
+  text-transform: uppercase;
+  text-shadow: rgba(0,0,0,0.5) 1px 1px;
+}
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  margin: auto;
+  box-shadow: rgba(0,0,0,0.5) 30px 30px;
+  border-radius: 10px;
+}
+#img-caption {
+  margin: 0.5rem;
+  color: #fff;
+  text-shadow: rgba(0,0,0,0.5) 30px 30px;
+}
+p {
+  padding: 5%;
+  margin: 5rem auto;
+  max-width: 36%;
+  background-color: #ccc;
+  border-radius: 10px;
+}
+a {
+  color: #ccc;
+}
+a:hover {
+  color: #fff;
+}

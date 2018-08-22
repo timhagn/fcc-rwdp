@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>FCC: Build a Survey Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="dist/css/sf.css">
+</head>
+
+<body translate="no">
+
+<div id="main">
+    <h1 id="title">Experience Feedback</h1>
+    <p id="description"> Tell us a little about your experience in the #100DaysOfCode challenge!</p>
+    <form id="survey-form">
+        <fieldset>
+            <legend>Tell us about yourself</legend>
+            <label id="name-label" for="name">Name *</label>
+            <input name="name" id="name" type="text"
+                   placeholder="Enter your Name..." required>
+            <label id="email-label" for="name">E-Mail *</label>
+            <input name="email" id="email" type="email"
+                   placeholder="Enter your E-Mail Address..." required>
+            <label id="number-label" for="number">Age *</label>
+            <input name="number" id="number" type="number"
+                   placeholder="9-99" required
+                   min="9" max="99">
+            <label id="gender-label" for="gender">Gender</label>
+            <input type="radio" name="gender" value="male" checked> Male
+            <input type="radio" name="gender" value="female"> Female
+        </fieldset>
+        <fieldset name="experiences" id="experiences">
+            <legend id="experiences-label" for="experiences">Coding Experiences</legend>
+            <label id="dropdown-label" for="dropdown">
+                How would you rate your Average Experience?
+            </label>
+            <select id="dropdown" name="dropdown">
+                <option value="default" selected>Select...</option>
+                <option value="Good">Good</option>
+                <option value="Bad">Bad</option>
+                <option value="Dropout">Dropout</option>
+            </select>
+            <fieldset name="codefield" id="codefield">
+                <legend id="codefield-label" for="codefield">
+                    In which field did you code the most?
+                </legend>
+                <label id="backend-label" for="backend">Web-Backend</label>
+                <input type="checkbox" id="backend" name="backend" value="Backend">
+                <label id="frontend-label" for="frontend">Web-Frontend</label>
+                <input type="checkbox" id="frontend" name="frontend" value="Frontend">
+                <label id="desktop-label" for="desktop">Desktop</label>
+                <input type="checkbox" id="desktop" name="desktop" value="Desktop">
+                <label id="mobile-label" for="mobile">Mobile</label>
+                <input type="checkbox" id="mobile" name="mobile" value="Mobile">
+            </fieldset>
+        </fieldset>
+        <fieldset>
+            <label id="more-label" for="more">Further Info</label>
+            <div class="justified">
+        <textarea id="more" name="more"
+                  placeholder="Is there something you might want to tell us more about?"></textarea>
+            </div>
+        </fieldset>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+</div>
+
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
