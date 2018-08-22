@@ -90,6 +90,9 @@ a:hover {
   position: relative;
   margin-left: 16.2rem;
 }
+#main-doc section {
+  scroll-behavior: smooth;
+}
 #main-doc .main-section {
   padding-bottom: 1rem;
 }
@@ -104,12 +107,12 @@ a:hover {
   border-bottom: 0.1rem dashed #ccc;
 }
 #main-doc img {
-  padding: 1rem;
+  padding: 2rem 1rem 1rem;
   width: 13rem;
   height: auto;
 }
 #main-doc .js-icon {
-  padding: 1rem;
+  padding: 2rem 1rem 1rem;
   font-size: 7rem;
   color: yellow;
 }

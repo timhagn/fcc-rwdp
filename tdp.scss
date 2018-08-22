@@ -95,6 +95,10 @@ a {
   position: relative;
   margin-left: 16.2rem;
 
+  section {
+    scroll-behavior: smooth;
+  }
+
   .main-section {
     padding-bottom: 1rem;
   }
@@ -111,13 +115,13 @@ a {
   }
 
   img {
-    padding: 1rem;
+    padding: 2rem 1rem 1rem;
     width: 13rem;
     height: auto;
   }
 
   .js-icon {
-    padding: 1rem;
+    padding: 2rem 1rem 1rem;
     font-size: 7rem;
     color: yellow;
   }

@@ -12,6 +12,8 @@
           integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
           crossorigin="anonymous">
     <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
+    <link rel="stylesheet"
           href="dist/css/tdp.css">
 </head>
 
@@ -75,6 +77,19 @@
             This documentation refers to the latest draft version, which is
             currently ECMAScript 2019.
         </p>
+        <pre>
+            <code class="js">
+                /**
+                 * Minimal JS/ES6 Hello World.
+                 */
+
+                const helloWorld = () => {
+                    let text = `Hello World with ES6!`;
+                    console.log(text);
+                }
+                helloWorld();
+            </code>
+        </pre>
     </section>
     <section class="main-section" id="PHP">
         <header>PHP</header>
@@ -101,6 +116,27 @@
             command-line interface (CLI) and can be used to implement standalone
             graphical applications.
         </p>
+        <pre>
+            <code class="php">
+                /**
+                 * PHP 7 Hello World.
+                 */
+
+                $test = ([function(){
+                    return [
+                        'echo' => function($words){
+                            foreach($words as $word){
+                                echo "{$word} ";
+                            }
+                        }
+                    ];
+                }, function(){
+                    return ['hello', 'world'];
+                }]);
+
+                $test[0]()['echo']($test[1]());
+            </code>
+        </pre>
     </section>
     <section class="main-section" id="Python">
         <header>Python</header>
@@ -120,6 +156,17 @@
             imperative, functional and procedural, and has a large and
             comprehensive standard library.
         </p>
+        <pre>
+            <code class="python">
+                # Simple Hello World function in Python > 3.5
+                def hello_world():
+                    print("Hello World!")
+
+
+                hello_world()
+
+            </code>
+        </pre>
     </section>
     <section class="main-section" id="Differences">
         <header>Differences</header>
@@ -131,6 +178,7 @@
 
 <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script src="dist/tdp.js"></script>
 </body>
 </html>
