@@ -122,7 +122,7 @@
                  * PHP 7 Hello World.
                  */
 
-                $test = ([function(){
+                $hello = ([function(){
                     return [
                         'echo' => function($words){
                             foreach($words as $word){
@@ -134,7 +134,7 @@
                     return ['hello', 'world'];
                 }]);
 
-                $test[0]()['echo']($test[1]());
+                $hello[0]()['echo']($hello[1]());
             </code>
         </pre>
     </section>
