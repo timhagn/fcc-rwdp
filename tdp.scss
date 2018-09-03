@@ -126,7 +126,7 @@ a {
     color: yellow;
   }
 
-  p {
+  p, blockquote {
     padding: 1rem;
     font-size: medium;
     max-width: 46%;
@@ -134,6 +134,12 @@ a {
     @media (max-width: 1480px) {
       max-width: 76%;
     }
+  }
+
+  blockquote {
+    line-height: 1.5;
+    font-family: "Open Sans",arial,x-locale-body,sans-serif;
+    font-style: oblique;
   }
 
   ul {

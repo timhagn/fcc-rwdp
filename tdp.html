@@ -26,7 +26,7 @@
         <li><a class="nav-link" href="#JavaScript_+_ECMAScript">JavaScript + ECMAScript</a></li>
         <li><a class="nav-link" href="#PHP">PHP</a></li>
         <li><a class="nav-link" href="#Python">Python</a></li>
-        <li><a class="nav-link" href="#Differences">Differences</a></li>
+        <li><a class="nav-link" href="#Variables_Declaration">Variables Declaration</a></li>
     </ul>
 </nav>
 <main id="main-doc">
@@ -54,6 +54,10 @@
             <li></li>
             <li></li>
         </ul>
+        <p>It neither claims nor wants to fulfill completeness, as whole books
+           could be (and were) written about them, each on their own. It just
+           wants to shed light on some interesting concepts similar and different.
+           Where not stated otherwise, it refers to the latest versions of each language.</p>
     </section>
     <section class="main-section" id="JavaScript_+_ECMAScript">
         <header>JavaScript + ECMAScript</header>
@@ -74,8 +78,6 @@
             the sixth major version of ECMAScript, which is officially called
             ECMAScript 2015, and was initially referred to as ECMAScript 6 or ES6.
             Since then, ECMAScript standards are on yearly release cycles.
-            This documentation refers to the latest draft version, which is
-            currently ECMAScript 2019.
         </p>
         <pre>
             <code class="js">
@@ -168,11 +170,61 @@
             </code>
         </pre>
     </section>
-    <section class="main-section" id="Differences">
-        <header>Differences</header>
-        <p></p>
-        <p></p>
-        <p></p>
+    <section class="main-section" id="Variables_Declaration">
+        <header>Variables Declaration</header>
+        <p>All three languages share a common similarity in interpreted scripting
+           languages:<br />
+           Variables are (by default) dynamically typed.<br />
+           But whereas JS and PHP can be urged to enforce some level of strict
+           typing and provide some kinds of defining a "constant" (unchangeable,
+           read-only variables), Python only "enforces" the latter by coding
+           standards, or some "tricks" as shown below.</p>
+        <p>Let's first take a look into JS, where one can use any Unicode character
+           and only has to conform to certain rules, as taken from
+           <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types">MDN</a>:</p>
+        <blockquote>
+            <i class="fas fa-quote-right"></i>
+            A JavaScript identifier must start with a letter, underscore (_),
+            or dollar sign ($); subsequent characters can also be digits (0-9).
+            Because JavaScript is case sensitive, letters include the characters
+            "A" through "Z" (uppercase) and the characters "a" through "z" (lowercase).
+        </blockquote>
+        <pre>
+            <code class="js">
+                /*
+                 * In the "olden days" of pre ES6 there only was the "almighty"
+                 * var - but with - at the most - a little grumbling it could be
+                 * let (pun intended) out without "use strict". Example:
+                 */
+                var MyVariable = "I'm a string but also might be a Number next";
+                MyVariable = 1;
+
+                /*
+                 * As of ES6 (ECMAScript 2015) there came:
+                 * + let - a block-scoped, local variable.
+                 * + const - a block-scoped, read-only named constant.
+                 * Examples (taken from MDN):
+                 */
+                function letTest() {
+                  let x = 1;
+                  if (true) {
+                    let x = 2;  // different variable
+                    console.log(x);  // 2
+                  }
+                  console.log(x);  // 1
+                }
+                // NOTE: Constants can be declared with uppercase or lowercase,
+                // but a common convention is to use all-uppercase letters.
+                // define MY_FAV as a constant and give it the value 7
+                const MY_FAV = 7;
+                // this will throw an error - Uncaught TypeError: Assignment to
+                // constant variable.
+                MY_FAV = 20;
+                // MY_FAV is 7
+                console.log('my favorite number is: ' + MY_FAV);
+            </code>
+        </pre>
+        <p>Next let's see how PHP variables and constants can be declared:</p>
     </section>
 </main>
 

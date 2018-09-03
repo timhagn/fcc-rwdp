@@ -116,15 +116,20 @@ a:hover {
   font-size: 7rem;
   color: yellow;
 }
-#main-doc p {
+#main-doc p, #main-doc blockquote {
   padding: 1rem;
   font-size: medium;
   max-width: 46%;
 }
 @media (max-width: 1480px) {
-  #main-doc p {
+  #main-doc p, #main-doc blockquote {
     max-width: 76%;
   }
+}
+#main-doc blockquote {
+  line-height: 1.5;
+  font-family: "Open Sans", arial, x-locale-body, sans-serif;
+  font-style: oblique;
 }
 #main-doc ul {
   padding-left: 1rem;
