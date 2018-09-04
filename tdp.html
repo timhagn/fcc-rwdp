@@ -21,13 +21,16 @@
 
 <nav id="navbar">
     <header>JS vs. PHP vs. Python</header>
-    <ul>
+    <ul id="swipemenu">
         <li><a class="nav-link" href="#Overview">Overview</a></li>
         <li><a class="nav-link" href="#JavaScript_+_ECMAScript">JavaScript + ECMAScript</a></li>
         <li><a class="nav-link" href="#PHP">PHP</a></li>
         <li><a class="nav-link" href="#Python">Python</a></li>
         <li><a class="nav-link" href="#Variables_Declaration">Variables Declaration</a></li>
     </ul>
+    <a href="#swipemenu">
+        <i class="fas fa-bars"></i>
+    </a>
 </nav>
 <main id="main-doc">
     <section class="main-section" id="Overview">
@@ -81,15 +84,15 @@
         </p>
         <pre>
             <code class="js">
-                /**
-                 * Minimal JS/ES6 Hello World.
-                 */
+/**
+ * Minimal JS/ES6 Hello World with Immediately Invoked Function.
+ */
 
-                const helloWorld = () => {
-                    let text = `Hello World with ES6!`;
-                    console.log(text);
-                }
-                helloWorld();
+(() => {
+    const text = `Hello World with ES6!`;
+    console.log(text);
+})();
+
             </code>
         </pre>
     </section>
@@ -120,23 +123,24 @@
         </p>
         <pre>
             <code class="php">
-                /**
-                 * PHP 7 Hello World.
-                 */
+/**
+ * PHP 7 Hello World with functions in array.
+ */
 
-                $hello = ([function(){
-                    return [
-                        'echo' => function($words){
-                            foreach($words as $word){
-                                echo "{$word} ";
-                            }
-                        }
-                    ];
-                }, function(){
-                    return ['hello', 'world'];
-                }]);
+$hello = ([function() {
+    return [
+        'echo' => function($words){
+            foreach($words as $word){
+                echo "{$word} ";
+            }
+        }
+    ];
+}, function() {
+    return ['hello', 'world'];
+}]);
 
-                $hello[0]()['echo']($hello[1]());
+$hello[0]()['echo']($hello[1]());
+
             </code>
         </pre>
     </section>
@@ -160,12 +164,12 @@
         </p>
         <pre>
             <code class="python">
-                # Simple Hello World function in Python > 3.5
-                def hello_world():
-                    print("Hello World!")
+# Simple Hello World function in Python > 3.5
+def hello_world():
+    print("Hello World!")
 
 
-                hello_world()
+hello_world()
 
             </code>
         </pre>
@@ -191,37 +195,39 @@
         </blockquote>
         <pre>
             <code class="js">
-                /*
-                 * In the "olden days" of pre ES6 there only was the "almighty"
-                 * var - but with - at the most - a little grumbling it could be
-                 * let (pun intended) out without "use strict". Example:
-                 */
-                var MyVariable = "I'm a string but also might be a Number next";
-                MyVariable = 1;
+/*
+ * In the "olden days" of pre ES6 there only was the "almighty"
+ * var - but with - at the most - a little grumbling it could be
+ * let (pun intended) out without "use strict". Example:
+ */
+var MyVariable = "I'm a string but also might be a Number next";
+MyVariable = 1;
 
-                /*
-                 * As of ES6 (ECMAScript 2015) there came:
-                 * + let - a block-scoped, local variable.
-                 * + const - a block-scoped, read-only named constant.
-                 * Examples (taken from MDN):
-                 */
-                function letTest() {
-                  let x = 1;
-                  if (true) {
-                    let x = 2;  // different variable
-                    console.log(x);  // 2
-                  }
-                  console.log(x);  // 1
-                }
-                // NOTE: Constants can be declared with uppercase or lowercase,
-                // but a common convention is to use all-uppercase letters.
-                // define MY_FAV as a constant and give it the value 7
-                const MY_FAV = 7;
-                // this will throw an error - Uncaught TypeError: Assignment to
-                // constant variable.
-                MY_FAV = 20;
-                // MY_FAV is 7
-                console.log('my favorite number is: ' + MY_FAV);
+/*
+ * As of ES6 (ECMAScript 2015) there came:
+ * + let - a block-scoped, local variable.
+ * + const - a block-scoped, read-only named constant.
+ * Examples (taken from MDN):
+ */
+function letTest() {
+  let x = 1;
+  if (true) {
+    let x = 2;  // different variable
+    console.log(x);  // 2
+  }
+  console.log(x);  // 1
+}
+
+// NOTE: Constants can be declared with uppercase or lowercase,
+// but a common convention is to use all-uppercase letters.
+// define MY_FAV as a constant and give it the value 7
+const MY_FAV = 7;
+// this will throw an error - Uncaught TypeError: Assignment to
+// constant variable.
+MY_FAV = 20;
+// MY_FAV is 7
+console.log('my favorite number is: ' + MY_FAV);
+
             </code>
         </pre>
         <p>Next let's see how PHP variables and constants can be declared:</p>
@@ -230,7 +236,11 @@
 
 <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.initLineNumbersOnLoad();
+</script>
 <script src="dist/tdp.js"></script>
 </body>
 </html>
