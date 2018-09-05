@@ -182,11 +182,13 @@ hello_world()
         <header>Variables Declaration</header>
         <p>All three languages share a common similarity in interpreted scripting
            languages:<br />
-           Variables are (by default) dynamically typed.<br />
+           Variables are (by default) dynamically typed (with some exception(s ; ) in
+           Python, as you are going to see).<br />
            But whereas JS and PHP can be urged to enforce some level of strict
            typing and provide some kinds of defining a "constant" (unchangeable,
            read-only variables), Python only "enforces" the latter by coding
-           standards, or some "tricks" as shown below.</p>
+           standards, or some "tricks" as shown below (for all of you coming from
+           JS-Land, you might cry "hurray" at inbuilt im-/mutability for some types).</p>
         <p>Let's first take a look into JS, where one can use any Unicode character
            and only has to conform to certain rules, as taken from
            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types">MDN</a>:</p>
@@ -199,7 +201,7 @@ hello_world()
         </blockquote>
         <pre>
             <code class="js">
-/*
+/**
  * In the "olden days" of pre ES6 there only was the "almighty"
  * var - but with - at the most - a little grumbling it could be
  * let (pun intended) out without "use strict". Example:
@@ -211,7 +213,8 @@ MyVariable = 1;
  * As of ES6 (ECMAScript 2015) there came:
  * + let - a block-scoped, local variable.
  * + const - a block-scoped, read-only named constant.
- * Examples (taken from MDN):
+ * Don't think about 'scope' right now, the next section will cover this.
+ * Examples for let and const (taken from MDN):
  */
 function letTest() {
   let x = 1;
@@ -234,7 +237,33 @@ console.log('my favorite number is: ' + MY_FAV);
 
             </code>
         </pre>
-        <p>Next let's see how PHP variables and constants can be declared:</p>
+        <p>Next let's see how PHP variables and constants can be declared, here,
+           too some rules have to be met, as taken from
+            <a href="https://secure.php.net/manual/en/language.variables.basics.php">php.net:</a></p>
+        <blockquote>
+            <i class="fas fa-quote-right"></i>
+            Variable names follow the same rules as other labels in PHP.
+            A valid variable name starts with a letter or underscore,
+            followed by any number of letters, numbers, or underscores.
+            As a regular expression, it would be expressed thus:
+            '[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*'
+        </blockquote>
+        <p>Such, in layman's terms: the (extended) ASCII-Standard minus the
+           almighty <strong>$</strong>, which starts each variable and some
+           special cases like $this.</p>
+        <pre>
+            <code class="php">
+// First to the basics, taken from PHP.net:
+$var = 'Bob';
+$Var = 'Joe';
+echo "$var, $Var";      // outputs "Bob, Joe"
+
+$4site = 'not yet';     // invalid; starts with a number
+$_4site = 'not yet';    // valid; starts with an underscore
+$täyte = 'mansikka';    // valid; 'ä' is (Extended) ASCII 228.
+
+            </code>
+        </pre>
     </section>
 </main>
 
