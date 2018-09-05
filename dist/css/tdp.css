@@ -45,7 +45,7 @@ a:hover {
 @media (max-width: 641px) {
   #navbar header {
     font-size: small;
-    padding-right: 4rem;
+    padding-right: 4.5rem;
   }
 }
 #navbar ul {
@@ -57,9 +57,9 @@ a:hover {
 #navbar ul li {
   display: flex;
   width: 100%;
-  background: none;
   border-top: 0.1rem solid #ccc;
   min-height: 2rem;
+  background-color: #000;
 }
 #navbar ul li:last-of-type {
   border-bottom: 0.1rem solid #ccc;
@@ -91,12 +91,16 @@ a:hover {
     background-color: #000;
   }
 }
-#navbar i {
+#navbar #burger-menu,
+#navbar #burger-menu-close {
   display: none;
   font-size: 1.8rem;
   position: fixed;
-  right: 1rem;
+  right: 1.5rem;
   top: 0.5rem;
+}
+#navbar #burger-menu-close {
+  transition: all 2s ease-in-out;
 }
 @media (max-width: 641px) {
   #navbar {
@@ -106,17 +110,41 @@ a:hover {
     z-index: 100;
     font-size: small;
   }
-  #navbar i {
+  #navbar #burger-menu {
     display: initial;
   }
-  #navbar #swipemenu {
-    transition: all 1s ease-in-out;
+  #navbar #menu {
+    transition: opacity 1s ease-in-out;
     opacity: 0;
     max-width: 0;
   }
-  #navbar #swipemenu:target {
+  #navbar #menu li {
+    border: none;
+  }
+  #navbar #menu li .nav-link {
+    color: transparent;
+  }
+  #navbar #menu:target {
     opacity: 1;
     min-width: 100%;
+  }
+  #navbar #menu:target li {
+    border-top: 0.1rem solid #ccc;
+  }
+  #navbar #menu:target li:last-of-type {
+    border-bottom: 0.1rem solid #ccc;
+  }
+  #navbar #menu:target li .nav-link {
+    color: #ccc;
+  }
+  #navbar #menu:target #burger-menu {
+    display: none;
+    color: #000;
+  }
+  #navbar #menu:target #burger-menu-close {
+    display: initial;
+    z-index: 5;
+    background-color: #000;
   }
 }
 

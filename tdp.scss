@@ -46,7 +46,7 @@ a {
 
     @media (max-width: 641px) {
       font-size: small;
-      padding-right: 4rem;
+      padding-right: 4.5rem;
     }
   }
 
@@ -59,9 +59,9 @@ a {
     li {
       display: flex;
       width: 100%;
-      background: none;
       border-top: 0.1rem solid #ccc;
       min-height: 2rem;
+      background-color: #000;
 
       &:last-of-type {
         border-bottom: 0.1rem solid #ccc;
@@ -100,12 +100,18 @@ a {
     }
   }
 
-  i {
+  // These are our two button-icons for the burger.
+  #burger-menu,
+  #burger-menu-close {
     display: none;
     font-size: 1.8rem;
     position: fixed;
-    right: 1rem;
+    right: 1.5rem;
     top: 0.5rem;
+  }
+
+  #burger-menu-close {
+    transition: all 2s ease-in-out;
   }
 
   @media (max-width: 641px) {
@@ -115,21 +121,53 @@ a {
     z-index: 100;
     font-size: small;
 
-    i {
+    #burger-menu {
       display: initial;
     }
 
-    // TODO: finish implementing pure CSS burger...
-    // - worked on own site, why not here % )?
-    #swipemenu {
-      transition:all 1s ease-in-out;
+    #menu {
+      transition: opacity 1s ease-in-out;
       opacity: 0;
       max-width: 0;
+
+      li {
+        border: none;
+
+        .nav-link {
+          color: transparent;
+        }
+      }
     }
-    #swipemenu:target {
+
+    // Now this is where the magic happens.
+    #menu:target {
       opacity: 1;
       min-width: 100%;
+
+      li {
+        border-top: 0.1rem solid #ccc;
+
+        &:last-of-type {
+          border-bottom: 0.1rem solid #ccc;
+        }
+
+        .nav-link {
+          color: #ccc;
+        }
+      }
+
+      #burger-menu {
+        display: none;
+        color: #000;
+      }
+
+      #burger-menu-close {
+        display: initial;
+        z-index: 5;
+        background-color: #000;
+      }
     }
+
   }
 }
 
