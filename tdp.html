@@ -237,8 +237,8 @@ console.log('my favorite number is: ' + MY_FAV);
 
             </code>
         </pre>
-        <p>Next let's see how PHP variables and constants can be declared, here,
-           too some rules have to be met, as taken from
+        <p>Next, let's see how PHP variables and constants can be declared; here,
+           too, some rules have to be met, as taken from
             <a href="https://secure.php.net/manual/en/language.variables.basics.php">php.net:</a></p>
         <blockquote>
             <i class="fas fa-quote-right"></i>
@@ -250,13 +250,13 @@ console.log('my favorite number is: ' + MY_FAV);
         </blockquote>
         <p>Such, in layman's terms: the (extended) ASCII-Standard minus the
            almighty <strong>$</strong>, which starts each variable and some
-           special cases like $this.</p>
+           special cases like <strong>$this</strong>. Again they are case sensitive.</p>
         <pre>
             <code class="php">
 // First to the basics, taken from PHP.net:
 $var = 'Bob';
-$Var = 'Joe';
-echo "$var, $Var";      // outputs "Bob, Joe"
+$Var = 'John';
+echo "$var, $Var";      // outputs "Bob, John"
 
 $4site = 'not yet';     // invalid; starts with a number
 $_4site = 'not yet';    // valid; starts with an underscore
