@@ -29,7 +29,8 @@
         <li><a class="nav-link" href="#JavaScript_+_ECMAScript">JavaScript + ECMAScript</a></li>
         <li><a class="nav-link" href="#PHP">PHP</a></li>
         <li><a class="nav-link" href="#Python">Python</a></li>
-        <li><a class="nav-link" href="#Variables_Declaration">Variables Declaration</a></li>
+        <li><a class="nav-link" href="#Variable_Declaration">Variable Declaration</a></li>
+        <li><a class="nav-link" href="#Type_Comparison">Type Comparison</a></li>
         <a href="#">
             <i id="burger-menu-close" class="fas fa-window-close"></i>
         </a>
@@ -39,35 +40,41 @@
 <main id="main-doc">
     <section class="main-section" id="Overview">
         <header>Overview</header>
+        <article>
         <p>This Documentation shall introduce the following programming languages
            and show some of their differences and similarities:</p>
         <ul>
             <li>
                 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-                   target="_blank">
+                   target="_blank"
+                   rel="noopener noreferrer">
                     <i class="fab fa-js-square"></i>JavaScript / ECMAScript
                 </a>
             </li>
             <li>
-                <a href="https://secure.php.net/" target="_blank">
+                <a href="https://secure.php.net/"
+                   target="_blank"
+                   rel="noopener noreferrer">
                     <i class="fab fa-php"></i>PHP
                 </a>
             </li>
             <li>
-                <a href="https://www.python.org/" target="_blank">
+                <a href="https://www.python.org/"
+                   target="_blank"
+                   rel="noopener noreferrer">
                     <i class="fab fa-python"></i>Python
                 </a>
             </li>
-            <li></li>
-            <li></li>
         </ul>
         <p>It neither claims nor wants to fulfill completeness, as whole books
            could be (and were) written about them, each on their own. It just
            wants to shed light on some interesting concepts similar and different.
            Where not stated otherwise, it refers to the latest versions of each language.</p>
+        </article>
     </section>
     <section class="main-section" id="JavaScript_+_ECMAScript">
         <header>JavaScript + ECMAScript</header>
+        <article>
         <i class="fab fa-js-square js-icon"></i>
         <p>
             JavaScript (JS) is a lightweight interpreted or JIT-compiled
@@ -99,9 +106,11 @@
 
             </code>
         </pre>
+        </article>
     </section>
     <section class="main-section" id="PHP">
         <header>PHP</header>
+        <article>
         <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg"
              alt="PHP-Logo"/>
         <p>
@@ -147,9 +156,11 @@ $hello[0]()['echo']($hello[1]());
 
             </code>
         </pre>
+        </article>
     </section>
     <section class="main-section" id="Python">
         <header>Python</header>
+        <article>
         <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Python_logo_and_wordmark.svg"
              alt="Python Logo and Wordmark" />
         <p>
@@ -170,16 +181,59 @@ $hello[0]()['echo']($hello[1]());
             <code class="python">
 # Simple Hello World function in Python > 3.5
 def hello_world():
-    print("Hello World!")
+    hello = "Hello World!"
+    print(hello)
 
 
 hello_world()
 
             </code>
         </pre>
+        <p>Or even better, see this next gem of pythonic
+           <a href="https://en.wikipedia.org/wiki/Zen_of_Python"
+              target="_blank"
+              rel="noopener noreferrer">easter eggs:</a></p>
+        <pre>
+            <code class="python">
+# Yip, this is a fully working example ^^.
+import this
+
+            </code>
+        </pre>
+        <p>Will output:</p>
+        <pre>
+            <code class="python">
+'''
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+'''
+
+            </code>
+        </pre>
+        </article>
     </section>
-    <section class="main-section" id="Variables_Declaration">
-        <header>Variables Declaration</header>
+    <section class="main-section" id="Variable_Declaration">
+        <header>Variable Declaration</header>
+        <article>
         <p>All three languages share a common similarity in interpreted scripting
            languages:<br />
            Variables are (by default) dynamically typed (with some exception(s ; ) in
@@ -189,9 +243,11 @@ hello_world()
            read-only variables), Python only "enforces" the latter by coding
            standards, or some "tricks" as shown below (for all of you coming from
            JS-Land, you might cry "hurray" at inbuilt im-/mutability for some types).</p>
-        <p>Let's first take a look into JS, where one can use any Unicode character
+        <p>Let's first take a dive into JS, where one can use any Unicode character
            and only has to conform to certain rules, as taken from
-           <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types">MDN</a>:</p>
+           <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types"
+              target="_blank"
+              rel="noopener noreferrer">MDN</a>:</p>
         <blockquote>
             <i class="fas fa-quote-right"></i>
             A JavaScript identifier must start with a letter, underscore (_),
@@ -237,9 +293,12 @@ console.log('my favorite number is: ' + MY_FAV);
 
             </code>
         </pre>
+        <hr>
         <p>Next, let's see how PHP variables and constants can be declared; here,
            too, some rules have to be met, as taken from
-            <a href="https://secure.php.net/manual/en/language.variables.basics.php">php.net:</a></p>
+            <a href="https://secure.php.net/manual/en/language.variables.basics.php"
+               target="_blank"
+               rel="noopener noreferrer">php.net:</a></p>
         <blockquote>
             <i class="fas fa-quote-right"></i>
             Variable names follow the same rules as other labels in PHP.
@@ -262,8 +321,215 @@ $4site = 'not yet';     // invalid; starts with a number
 $_4site = 'not yet';    // valid; starts with an underscore
 $täyte = 'mansikka';    // valid; 'ä' is (Extended) ASCII 228.
 
+/*
+ * As with 'let' in ES6+ above, variables in PHP are block-scoped by
+ * default, too. Variables from the global scope may be accessed by the keyword
+ * of the same name. Example:
+ */
+$var = "I am a global variable.";
+
+function testVars() {
+  $var = "I'm a local variable.";
+  echo $var;
+}
+
+echo $var;              // outputs: "I am a global variable."
+testVars();             // outputs: "I'm a local variable."
+
+// Whereas the following:
+function testVars() {
+  echo $var;            // Will give you a PHP Notice:  Undefined variable: var
+}
+
+// Using the 'global' keyword beforehand:
+function testVars() {
+global $var;
+  echo $var;            // outputs: "I am a global variable."
+}
+
             </code>
         </pre>
+        <p>Now <a href="https://secure.php.net/manual/en/language.constants.syntax.php"
+                  target="_blank"
+                  rel="noopener noreferrer">constants</a>
+           in PHP may be defined in the following ways:</p>
+        <blockquote>
+            <i class="fas fa-quote-right"></i>
+            You can define a constant by using the define()-function or by using
+            the const keyword outside a class definition as of PHP 5.3.0.
+            While define() allows a constant to be defined to an arbitrary
+            expression, the const keyword has restrictions as outlined in the
+            next paragraph. Once a constant is defined, it can never be changed
+            or undefined.
+        </blockquote>
+        <blockquote>
+            <i class="fas fa-quote-right"></i>
+            When using the const keyword, only scalar data (boolean, integer,
+            float and string) can be contained in constants prior to PHP 5.6.
+            From PHP 5.6 onwards, it is possible to define a constant as a
+            scalar expression, and it is also possible to define an array
+            constant. It is possible to define constants as a resource, but it
+            should be avoided, as it can cause unexpected results.
+        </blockquote>
+        <p>These are the differences between constants and variables:</p>
+        <ul class="square-list">
+            <li>Constants do not have a dollar sign ($) before them;</li>
+            <li>Prior to PHP 5.3, Constants may only be defined using the
+                define() function, not by simple assignment;</li>
+            <li>Constants may be defined and accessed anywhere without regard
+                to variable scoping rules;</li>
+            <li>Constants may not be redefined or undefined once they have been set; and</li>
+            <li>Constants may only evaluate to scalar values. As of PHP 5.6 it<br>
+                is possible to define array constant using const keywords and<br>
+                as of PHP 7 array constants can also be defined using define()<br>
+                You may use arrays in constant scalar expressions (for example,<br>
+                const FOO = array(1,2,3)[0];), but the end result must be a<br>
+                value of allowed type.</li>
+        </ul>
+        <p>Examples of defining constants (from <a href="https://secure.php.net/manual/en/language.constants.syntax.php"
+                                                   target="_blank"
+                                                   rel="noopener noreferrer">PHP.net</a>):</p>
+        <pre>
+            <code class="php">
+define("CONSTANT", "Hello world.");
+echo CONSTANT; // outputs "Hello world."
+echo Constant; // outputs "Constant" and issues a notice.
+
+            </code>
+        </pre>
+        <p>Defining Constants using the const keyword:</p>
+        <pre>
+            <code class="php">
+// Works as of PHP 5.3.0
+const CONSTANT = 'Hello World';
+
+echo CONSTANT;
+
+// Works as of PHP 5.6.0
+const ANOTHER_CONST = CONSTANT.'; Goodbye World';
+echo ANOTHER_CONST;
+
+const ANIMALS = array('dog', 'cat', 'bird');
+echo ANIMALS[1]; // outputs "cat"
+
+// Works as of PHP 7
+define('ANIMALS', array(
+    'dog',
+    'cat',
+    'bird'
+));
+echo ANIMALS[1]; // outputs "cat"
+
+            </code>
+        </pre>
+        <hr>
+        <p>Now on to Python. IMHO it is both the most beginner friendly of these
+           three mentioned languages, but has is quirks in defining variables,
+           because (from <a href="https://www.learnpython.org/en/Variables_and_Types"
+                            target="_blank"
+                            rel="noopener noreferrer">learnpython.org</a>:</p>
+        <blockquote>
+            <i class="fas fa-quote-right"></i>
+            Python is completely object oriented, and not "statically typed".
+            You do not need to declare variables before using them,
+            or declare their type. Every variable in Python is an object.
+        </blockquote>
+        <p>Now you might say: "Ok, what's the difference to JavaScript?", when
+           you hear about objects (as in JS, everything is an object, too,
+           have I forgotten to mention? ; ). But without further ado, let's
+           start with a simple declaration:</p>
+        <pre>
+            <code class="python">
+name = "Guido van Rossum"
+print(name)                 # outputs: "Guido van Rossum"
+
+            </code>
+        </pre>
+        <p>And as easy as that you have declared a String Variable (more on Types
+           in the next chapter). But whereas in JS or PHP, when you redeclare
+           a variable, it get's overwritten, Strings in Python are immutable!<br>
+           Let's have a look, what you could do in PHP:</p>
+        <pre>
+            <code class="php">
+$name = "Guido van Rossum";
+$name[7] = "o";
+echo $name;                     // outputs: Guido von Rossum
+
+            </code>
+        </pre>
+        <p>Trying the same in Python would give you a type error:</p>
+        <pre>
+            <code class="python">
+name = "Guido van Rossum"
+name[7] = "o"               # gives you:
+'''
+Traceback (most recent call last):
+  File "input", line 1, in module
+TypeError: 'str' object does not support item assignment
+'''
+            </code>
+        </pre>
+        <p>And although you seem to be able to redeclare variables in Python,
+           in truth a new object of the same or another type get's created in memory:</p>
+        <pre>
+            <code class="python">
+name = "Guido van Rossum"
+name = "Joachim von Hassel" # A new string (str) object get's created!
+print(name)                 # outputs "Joachim von Hassel"
+# (Off-Topic: Do you know "Welle: Erdball"? ; )
+
+# And of course you can do this:
+name = 104                  # but a new integer (int) object get's created!
+
+            </code>
+        </pre>
+        <p>But as written above, more on types in the next chapter. Now you might
+           begin to understand, that (nearly) no variable is really constant in Python.
+           There are only some workarounds and libraries you can import, but the
+           easiest way might be to use a so called tuple, a special kind of list,
+           but even that's not unbreakable:</p>
+        <pre>
+            <code class="python">
+CONST = ("fixed",)          # The ',' at the end tells Python to define a tuple.
+print(CONST[0])             # outputs: "fixed"
+CONST[0] = "nada"           # gives you:
+'''
+Traceback (most recent call last):
+  File "input", line 1, in module
+TypeError: 'tuple' object does not support item assignment
+'''
+
+# There's an inbuilt library "namedtuple", which makes this easier to read:
+from collections import namedtuple
+Constant = namedtuple('Constant', ['fixed'])
+constant = Constant(42)
+print(constant.fixed)       # outputs: 42
+constant.fixed = 23         # gives you:
+'''
+Traceback (most recent call last):
+  File "input", line 1, in module
+AttributeError: can't set attribute
+'''
+
+# But you still could do (not writing the CONST[0]):
+CONST = "gotcha"
+print(CONST)                # outputs: "gotcha" : /
+
+# Respectively:
+constant = "gotcha"
+print(constant)             # and again outputs: "gotcha" : /
+
+            </code>
+        </pre>
+        <p>Usually it's just an accepted coding convention to "Just don't change it!",
+           when a variable is written in UPPERCASE.</p>
+        </article>
+    </section>
+    <section class="main-section" id="Type_Comparison">
+        <header>Type Comparison</header>
+        <article>
+        <p>Here come's the bride, uhm type...</p>
+        </article>
     </section>
 </main>
 

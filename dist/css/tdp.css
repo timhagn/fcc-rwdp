@@ -16,9 +16,15 @@ a {
   color: #ccc;
   text-decoration: none;
   transition: background-color ease-in-out 200ms;
+  font-style: oblique;
 }
 a:hover {
   background-color: #333;
+}
+
+hr {
+  border-style: dotted;
+  margin-bottom: 0.5rem;
 }
 
 #navbar {
@@ -114,9 +120,8 @@ a:hover {
     display: initial;
   }
   #navbar #menu {
-    transition: opacity 1s ease-in-out;
+    transition: opacity 300ms ease-in-out;
     opacity: 0;
-    max-width: 0;
   }
   #navbar #menu li {
     border: none;
@@ -126,7 +131,6 @@ a:hover {
   }
   #navbar #menu:target {
     opacity: 1;
-    min-width: 100%;
   }
   #navbar #menu:target li {
     border-top: 0.1rem solid #ccc;
@@ -182,7 +186,7 @@ a:hover {
 #main-doc p, #main-doc blockquote {
   padding: 1rem;
   font-size: medium;
-  max-width: 46%;
+  max-width: 57%;
 }
 @media (max-width: 1480px) {
   #main-doc p, #main-doc blockquote {
@@ -196,11 +200,9 @@ a:hover {
 }
 #main-doc ul {
   padding-left: 1rem;
-  list-style: dot;
 }
 #main-doc ul li {
   padding: 0.5rem;
-  vertical-align: center;
 }
 #main-doc ul li a {
   display: flex;
@@ -214,6 +216,10 @@ a:hover {
 #main-doc ul li a i {
   font-size: 3rem;
   width: 4.5rem;
+}
+#main-doc .square-list li {
+  margin-left: 1.5rem;
+  list-style: square;
 }
 #main-doc code {
   padding-left: 1rem;
