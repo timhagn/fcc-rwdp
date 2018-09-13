@@ -135,10 +135,12 @@ hr {
       transition: opacity 300ms ease-in-out;
       opacity: 0;
 
+
       li {
         border: none;
 
         .nav-link {
+          display: none;
           color: transparent;
         }
       }
@@ -156,6 +158,7 @@ hr {
         }
 
         .nav-link {
+          display: initial;
           color: #ccc;
         }
       }
@@ -197,6 +200,12 @@ hr {
     width: 100%;
     border-top: 0.1rem dashed #ccc;
     border-bottom: 0.1rem dashed #ccc;
+  }
+
+  h3 {
+    padding: 0 1rem;
+    font-size: medium;
+    font-style: italic;
   }
 
   img {
@@ -272,6 +281,58 @@ hr {
     td.hljs-ln-code {
       padding-left: 1rem;
     }
+  }
+
+  table.comparison-table,
+  table.comparison-table th,
+  table.comparison-table td {
+    border: 2px dotted;
+    border-collapse: collapse;
+    padding: 0.2rem 0.3rem;
+  }
+  table.comparison-table {
+    margin: 0 0 1rem 1rem;
+    width: 57%;
+
+    caption {
+      margin: 1rem 0;
+    }
+
+    tr td:first-of-type {
+      font-style: italic;
+    }
+
+    @media (max-width: 1480px) {
+      width: 86%;
+    }
+
+    @media (max-width: 1024px) {
+      max-width: 76%;
+      font-size: small;
+    }
+
+    @media (max-width: 320px) {
+      max-width: 100%;
+      font-size: smaller;
+      word-break: break-word;
+    }
+  }
+
+  .mutable,
+  .immutable,
+  .mutable-immutable {
+    color: #222;
+    margin: 0.1rem;
+  }
+  .mutable {
+    color: #222;
+    background-color: rgba(32, 178, 170, 0.9);
+  }
+  .immutable {
+    background-color: rgba(240, 128, 128, 0.9);
+  }
+  .mutable-immutable {
+    background-color: rgba(119, 136, 153, 0.9);
   }
 
   @media (max-width: 641px) {

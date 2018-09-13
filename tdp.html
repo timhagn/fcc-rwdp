@@ -243,6 +243,7 @@ Namespaces are one honking great idea -- let's do more of those!
            read-only variables), Python only "enforces" the latter by coding
            standards, or some "tricks" as shown below (for all of you coming from
            JS-Land, you might cry "hurray" at inbuilt im-/mutability for some types).</p>
+        <h3>JavaScript</h3>
         <p>Let's first take a dive into JS, where one can use any Unicode character
            and only has to conform to certain rules, as taken from
            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types"
@@ -294,6 +295,7 @@ console.log('my favorite number is: ' + MY_FAV);
             </code>
         </pre>
         <hr>
+        <h3>PHP</h3>
         <p>Next, let's see how PHP variables and constants can be declared; here,
            too, some rules have to be met, as taken from
             <a href="https://secure.php.net/manual/en/language.variables.basics.php"
@@ -423,11 +425,12 @@ echo ANIMALS[1]; // outputs "cat"
             </code>
         </pre>
         <hr>
+        <h3>Python</h3>
         <p>Now on to Python. IMHO it is both the most beginner friendly of these
            three mentioned languages, but has is quirks in defining variables,
            because (from <a href="https://www.learnpython.org/en/Variables_and_Types"
                             target="_blank"
-                            rel="noopener noreferrer">learnpython.org</a>:</p>
+                            rel="noopener noreferrer">learnpython.org</a>):</p>
         <blockquote>
             <i class="fas fa-quote-right"></i>
             Python is completely object oriented, and not "statically typed".
@@ -448,7 +451,8 @@ print(name)                 # outputs: "Guido van Rossum"
         <p>And as easy as that you have declared a String Variable (more on Types
            in the next chapter). But whereas in JS or PHP, when you redeclare
            a variable, it get's overwritten, Strings in Python are immutable!<br>
-           Let's have a look, what you could do in PHP:</p>
+           Let's have a look, what you could do in PHP (the same would be possible
+           in JS, too):</p>
         <pre>
             <code class="php">
 $name = "Guido van Rossum";
@@ -528,7 +532,167 @@ print(constant)             # and again outputs: "gotcha" : /
     <section class="main-section" id="Type_Comparison">
         <header>Type Comparison</header>
         <article>
-        <p>Here come's the bride, uhm type...</p>
+        <p>This chapter shall give a rudimentary introduction and comparison of
+           the languages' base Types, further information may be found in their
+           respective Docs (as attempting a complete overview of all the available
+           Types / Objects / Language specifics would most definitely go beyond the
+           scope of this "short" Technical Documentation).<br />
+           Whereas the following colors account for <span class="mutable">mutable</span>
+           and <span class="immutable">immutable</span> (or some
+           <span class="mutable-immutable">in between</span>) Types. </p>
+            <table class="comparison-table">
+                <caption>Comparison of the Basic Types in each language.</caption>
+                <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>JS / ESx</th>
+                    <th>PHP</th>
+                    <th>Python</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>String sequences</td>
+                    <td class="mutable">string (unicode literal) or String() class</td>
+                    <td class="mutable">string (byte literal - unicode only in PHP 7.0+)</td>
+                    <td class="immutable">str (unicode codepoints)</td>
+                </tr>
+                <tr>
+                    <td>Numeric</td>
+                    <td class="mutable">number and Number() class</td>
+                    <td class="mutable">int, float</td>
+                    <td class="immutable">int, float, complex</td>
+                </tr>
+                <tr>
+                    <td>Boolean</td>
+                    <td class="immutable">true & false (primitives), Boolean (object wrapper for a boolean value)</td>
+                    <td class="immutable">bool or boolean</td>
+                    <td class="immutable">bool </td>
+                </tr>
+                <tr>
+                    <td>Nullable</td>
+                    <td class="immutable">null (intentional absence of value), undefined (primitive undefined)</td>
+                    <td class="immutable">NULL (constant with no value), void ("useless" value)</td>
+                    <td class="immutable">None (null value)</td>
+                </tr>
+                <tr>
+                    <td>Basic Lists</td>
+                    <td class="mutable-immutable">array [integer indexed lists], object {"named" lists}</td>
+                    <td class="mutable-immutable">array [associative or indexed lists], object (classes)</td>
+                    <td class="mutable">list [mixed indexed], set {unique "list"}, dict {associative "array"}</td>
+                </tr>
+                <tr>
+                    <td>Advanced Lists</td>
+                    <td class="mutable-immutable">Map([key-value pairs), Set([unique values])</td>
+                    <td class="mutable-immutable">iterable [arrays or objects with Traversable interface]</td>
+                    <td class="immutable">tuple (immutable list), frozenset (immutable set)</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>Now on to a "shallow" introduction how each of the most "basic" types
+               may be defined and used in the different languages, else this wouldn't
+               become a Technical Documentation, but a book:</p>
+            <h3>JS String sequences</h3>
+            <p>(More on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"
+                          target="_blank"
+                          rel="noopener noreferrer">MDN Strings</a>,
+                as the comparison with the String() object / class would go to far...)</p>
+            <pre>
+                <code class="js">
+// String literals can take forms like:
+let string1 = 'I\'m a string';          // Mark the escaped "\'"!
+let string2 = "I'm a string";           // Here no escape char is needed.
+
+// And of course Unicode characters:
+let string3 = "deutscher Hutbürger, english, español, português, ...";
+
+// Since ES6 so called "Template Literals" are possible:
+let stringTemplate = `${string1} from another string!`;
+console.log(stringTemplate);            // outputs: "I'm a string from another string!"
+
+/*
+ * Multiline Strings are possible by concatenating them with "+" or using the "\"
+ * (backslash) character at the end (adapted from MDN):
+ */
+let longString1 = "This is a very long string which needs " +
+                  "to wrap across multiple lines because " +
+                  "otherwise my code is unreadable.";
+let longString2 = "This is a very long string which needs \
+to wrap across multiple lines because \
+otherwise my code is unreadable.";
+
+                </code>
+            </pre>
+            <h3>PHP String sequences</h3>
+            <p>(More on <a href="https://secure.php.net/manual/en/language.types.string.php"
+                           target="_blank"
+                           rel="noopener noreferrer">php.net Strings</a>, as we
+                won't go into e.g. "Heredoc" and "Nowdoc" at this place.)</p>
+            <pre>
+                <code class="php">
+// In single quoted string only basic escape chars will work,
+// like \' does, but \n or other escape sequences won't!
+$string1 = 'I \'m a string';
+$string2 = "I'm a string";
+
+// Next (unicode) will only work in PHP 7.0.0 and above!
+$string3 = "deutscher Hutbürger, english, español, português, ...";
+
+// In PHP you don't need special template strings, double quoted ones will do:
+$combinedString = "$string1 from another string!";
+echo $combinedString;                   // outputs: "I'm a string from another string!"
+
+// Opposing to JS you don't have to add special newline backslashes but
+// may concatenate strings by a "." dot, or have embedded newlines:
+$longstring1 =   'You can have concatenated strings on newlines'
+               . ' with a dot as it is'
+               . ' okay to do';
+$longstring2 = 'You can also have embedded newlines in
+strings this way as it is
+okay to do, too';
+
+                </code>
+            </pre>
+            <h3>Python character strings / Text Sequence Type</h3>
+            <p>(More in the <a href="https://docs.python.org/3/library/stdtypes.html?highlight=string#text-sequence-type-str"
+                           target="_blank"
+                           rel="noopener noreferrer">python docs</a>, as str
+                in Python is very versatile and opens up a deep rabbit hole! ; )</p>
+            <pre>
+                <code class="python">
+'''
+You may recognize this type of format from the examples above,
+cause it may be used as a multiline comment in a .py (Python) file,
+as well as a multiline string! But let's start at the beginning:
+'''
+# String literals may take the following forms:
+string1 = 'I \'m a string\n'            # Here both escape chars work!
+string2 = "I'm a string"                # No escape needed in double quotes.
+
+# String literals that are part of a single expression and have only whitespace
+# between them will be implicitly converted to a single string literal:
+string3 = "I'm also " "a string!"
+print(string3)                          # outputs: "I'm also a string!"
+
+# You can also concatenate strings by a "+" plus-sign:
+string4 = string2 + " plus a string!"
+print(string4)                          # outputs: "I'm a string plus a string!"
+
+# But to be more readable, in Python 3.5+ one usually "should use" the format()
+# method of the str object (here the rabbit hole begins, at the latest ; ):
+string5 = "{} plus a string!".format(string2)
+print(string5)
+
+# And now, as seen above, multiline strings aren't a hazard in Python:
+longstring1 = '''You already know this format
+very well from comments...
+'''
+longstring2 = """And of course it may be done
+with double quotes, too.
+"""
+
+                </code>
+            </pre>
         </article>
     </section>
 </main>

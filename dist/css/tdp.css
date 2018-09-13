@@ -127,6 +127,7 @@ hr {
     border: none;
   }
   #navbar #menu li .nav-link {
+    display: none;
     color: transparent;
   }
   #navbar #menu:target {
@@ -139,6 +140,7 @@ hr {
     border-bottom: 0.1rem solid #ccc;
   }
   #navbar #menu:target li .nav-link {
+    display: initial;
     color: #ccc;
   }
   #navbar #menu:target #burger-menu {
@@ -172,6 +174,11 @@ hr {
   width: 100%;
   border-top: 0.1rem dashed #ccc;
   border-bottom: 0.1rem dashed #ccc;
+}
+#main-doc h3 {
+  padding: 0 1rem;
+  font-size: medium;
+  font-style: italic;
 }
 #main-doc img {
   padding: 2rem 1rem 1rem;
@@ -234,6 +241,57 @@ hr {
 }
 #main-doc code td.hljs-ln-code {
   padding-left: 1rem;
+}
+#main-doc table.comparison-table,
+#main-doc table.comparison-table th,
+#main-doc table.comparison-table td {
+  border: 2px dotted;
+  border-collapse: collapse;
+  padding: 0.2rem 0.3rem;
+}
+#main-doc table.comparison-table {
+  margin: 0 0 1rem 1rem;
+  width: 57%;
+}
+#main-doc table.comparison-table caption {
+  margin: 1rem 0;
+}
+#main-doc table.comparison-table tr td:first-of-type {
+  font-style: italic;
+}
+@media (max-width: 1480px) {
+  #main-doc table.comparison-table {
+    width: 86%;
+  }
+}
+@media (max-width: 1024px) {
+  #main-doc table.comparison-table {
+    max-width: 76%;
+    font-size: small;
+  }
+}
+@media (max-width: 320px) {
+  #main-doc table.comparison-table {
+    max-width: 100%;
+    font-size: smaller;
+    word-break: break-word;
+  }
+}
+#main-doc .mutable,
+#main-doc .immutable,
+#main-doc .mutable-immutable {
+  color: #222;
+  margin: 0.1rem;
+}
+#main-doc .mutable {
+  color: #222;
+  background-color: rgba(32, 178, 170, 0.9);
+}
+#main-doc .immutable {
+  background-color: rgba(240, 128, 128, 0.9);
+}
+#main-doc .mutable-immutable {
+  background-color: rgba(119, 136, 153, 0.9);
 }
 @media (max-width: 641px) {
   #main-doc {
