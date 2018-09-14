@@ -693,6 +693,90 @@ with double quotes, too.
 
                 </code>
             </pre>
+            <h3>JS Numeric "Types"</h3>
+            <p>JS / ESx has no "real" (no pun intended) differentiation between
+               the many possible numeric types - although one can find out with
+               some functions of the Number() class, that's especially there for it.<br />
+               As <a href="https://www.w3schools.com/js/js_numbers.asp"
+                     target="_blank"
+                     rel="noopener noreferrer">w3schools</a>
+               states it:</p>
+            <blockquote>
+                <i class="fas fa-quote-right"></i>
+                JavaScript has only one type of number.
+                Numbers can be written with or without decimals.
+            </blockquote>
+            <p>Most of times, that's just fine, just not in some special cases.
+               The ECMAScipt specification talks about "double-precision 64-bit format IEEE 754-2008"
+               floating point numbers.
+               But let's dive straight into code:</p>
+            <pre>
+                <code class="js">
+// Let's start with the MAX_SAFE_INTEGER
+console.log(Number.MAX_SAFE_INTEGER);           //outputs: 9007199254740991
+
+// That's an important value to remember (or look up ; ),
+// because of JS's _integer_ precision is "only" 15 digits.
+console.log(999999999999999);                   // outputs: 999999999999999
+console.log(9999999999999999);                  // outputs: 10000000000000000
+
+// Floating point arithmetic get's up to 17 decimals, but a classic example is:
+console.log(0.1 + 0.2);                         // outputs: 0.30000000000000004
+// Wouldn't be great in calculating bank transfers, would it ; )?
+// To get around this behavior, multiply and divide by 10:
+console.log((0.1 * 10 + 0.2 * 10) / 10);        // outputs: 0.3
+
+// One !important thing to remember, is JS's type coercion with concatenation:
+console.log("10" + 20);                         // outputs: "1020", not 30!
+
+// And of course JS / ESx is able to handle hexadecimal and other numeric types:
+// Hex:
+console.log(0xFF);                              // outputs: 255
+// Binary:
+let giveMeBinary = 32;
+console.log(giveMeBinary.toString(2));          // outputs: 100000
+// ...whereas with Number.toString() you can output numbers from base 2 (binary)
+// to base 36. Hexadecimal is base 16. Decimal is base 10. Octal is base 8.
+
+                </code>
+            </pre>
+            <p>To read more on numbers (adding to the above link and code),
+               goto one (or more) of the following sites:</p>
+            <ul class="square-list">
+               <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number"
+                      target="_blank"
+                      rel="noopener noreferrer">"Number" on MDN</a>
+               </li>
+               <li><a href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type"
+                      target="_blank"
+                      rel="noopener noreferrer">"The Number Type" ECMAScript reference</a>
+               </li>
+               <li><a href="https://www.w3schools.com/js/js_number_methods.asp"
+                      target="_blank"
+                      rel="noopener noreferrer">"JS Number Methods" on w3schools.com</a>
+               </li>
+            </ul>
+            <br />
+            <h3>PHP Number types</h3>
+            <p>As in JS, PHP has many different types of numbers. But usually they
+               are divided up in Integers and Floating point numbers.
+               First some code for integer Types, as they include
+               decimal (base 10), hexadecimal (base 16), octal (base 8) and
+               binary (base 2) notations (taken from
+               <a href="https://secure.php.net/manual/en/language.types.integer.php"
+                  target="_blank"
+                  rel="noopener noreferrer">"Integers" on php.net</a>:</p>
+
+            <pre>
+                <code class="php">
+$a = 1234;                  // decimal number
+$a = -123;                  // a negative number
+$a = 0123;                  // octal number (equivalent to 83 decimal)
+$a = 0x1A;                  // hexadecimal number (equivalent to 26 decimal)
+$a = 0b11111111;            // binary number (equivalent to 255 decimal)
+
+                </code>
+            </pre>
         </article>
     </section>
 </main>
