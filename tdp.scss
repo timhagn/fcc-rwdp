@@ -297,10 +297,31 @@ hr {
 
     caption {
       margin: 1rem 0;
+
+      span.jumpcell {
+        display: block;
+        font-style: italic;
+        font-size: small;
+      }
     }
 
-    tr td:first-of-type {
-      font-style: italic;
+    tr {
+      td:first-of-type {
+        font-style: italic;
+      }
+
+      td a {
+        display: block;
+        height: 100%;
+        width:100%;
+        color: #222;
+        font-style: initial;
+
+        &:hover {
+          color: #ccc;
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+      }
     }
 
     @media (max-width: 1480px) {

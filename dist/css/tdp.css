@@ -257,8 +257,24 @@ hr {
 #main-doc table.comparison-table caption {
   margin: 1rem 0;
 }
+#main-doc table.comparison-table caption span.jumpcell {
+  display: block;
+  font-style: italic;
+  font-size: small;
+}
 #main-doc table.comparison-table tr td:first-of-type {
   font-style: italic;
+}
+#main-doc table.comparison-table tr td a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: #222;
+  font-style: initial;
+}
+#main-doc table.comparison-table tr td a:hover {
+  color: #ccc;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 1480px) {
   #main-doc table.comparison-table {

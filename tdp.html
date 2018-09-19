@@ -541,7 +541,10 @@ print(constant)             # and again outputs: "gotcha" : /
            and <span class="immutable">immutable</span> (or some
            <span class="mutable-immutable">in between</span>) Types. </p>
             <table class="comparison-table">
-                <caption>Comparison of the Basic Types in each language.</caption>
+                <caption>
+                    Comparison of the Basic Types in each language.
+                    <span class="jumpcell">Click on the cells to jump to the passage.</span>
+                </caption>
                 <thead>
                 <tr>
                     <th>Type</th>
@@ -553,15 +556,39 @@ print(constant)             # and again outputs: "gotcha" : /
                 <tbody>
                 <tr>
                     <td>String sequences</td>
-                    <td class="mutable">string (unicode literal) or String() class</td>
-                    <td class="mutable">string (byte literal - unicode only in PHP 7.0+)</td>
-                    <td class="immutable">str (unicode codepoints)</td>
+                    <td class="mutable">
+                        <a href="#js_string">
+                        string (unicode literal) or String() class
+                        </a>
+                    </td>
+                    <td class="mutable">
+                        <a href="#php_string">
+                        string (byte literal - unicode only in PHP 7.0+)
+                        </a>
+                    </td>
+                    <td class="immutable">
+                        <a href="#py_string">
+                        str (unicode codepoints)
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td>Numeric</td>
-                    <td class="mutable">number and Number() class</td>
-                    <td class="mutable">int, float</td>
-                    <td class="immutable">int, float, complex</td>
+                    <td class="mutable">
+                        <a href="#js_num">
+                        number and Number() class
+                        </a>
+                    </td>
+                    <td class="mutable">
+                        <a href="#php_num">
+                        int, float
+                        </a>
+                    </td>
+                    <td class="immutable">
+                        <a href="#py_num">
+                        int, float, complex
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td>Boolean</td>
@@ -592,7 +619,7 @@ print(constant)             # and again outputs: "gotcha" : /
             <p>Now on to a "shallow" introduction how each of the most "basic" types
                may be defined and used in the different languages, else this wouldn't
                become a Technical Documentation, but a book:</p>
-            <h3>JS String sequences</h3>
+            <h3 id="js_string">JS String sequences</h3>
             <p>(More on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"
                           target="_blank"
                           rel="noopener noreferrer">MDN Strings</a>,
@@ -623,7 +650,7 @@ otherwise my code is unreadable.";
 
                 </code>
             </pre>
-            <h3>PHP String sequences</h3>
+            <h3 id="php_string">PHP String sequences</h3>
             <p>(More on <a href="https://secure.php.net/manual/en/language.types.string.php"
                            target="_blank"
                            rel="noopener noreferrer">php.net Strings</a>, as we
@@ -653,7 +680,7 @@ okay to do, too';
 
                 </code>
             </pre>
-            <h3>Python character strings / Text Sequence Type</h3>
+            <h3 id="py_string">Python character strings / Text Sequence Type</h3>
             <p>(More in the <a href="https://docs.python.org/3/library/stdtypes.html?highlight=string#text-sequence-type-str"
                            target="_blank"
                            rel="noopener noreferrer">python docs</a>, as str
@@ -693,7 +720,7 @@ with double quotes, too.
 
                 </code>
             </pre>
-            <h3>JS Numeric "Types"</h3>
+            <h3 id="js_num">JS Numeric "Types"</h3>
             <p>JS / ESx has no "real" (no pun intended) differentiation between
                the many possible numeric types - although one can find out with
                some functions of the Number() class, that's especially there for it.<br />
@@ -716,7 +743,8 @@ with double quotes, too.
 console.log(Number.MAX_SAFE_INTEGER);           //outputs: 9007199254740991
 
 // That's an important value to remember (or look up ; ),
-// because of JS's _integer_ precision is "only" 15 digits.
+// because of JS's _integer_ precision is "only" 15 digits,
+// which means an "integer overflow" takes place:
 console.log(999999999999999);                   // outputs: 999999999999999
 console.log(9999999999999999);                  // outputs: 10000000000000000
 
@@ -757,9 +785,9 @@ console.log(giveMeBinary.toString(2));          // outputs: 100000
                </li>
             </ul>
             <br />
-            <h3>PHP Number types</h3>
-            <p>As in JS, PHP has many different types of numbers. But usually they
-               are divided up in Integers and Floating point numbers.
+            <h3 id="php_num">PHP Number types</h3>
+            <p>As in JS, PHP has many different numeric types, but no real differentiation.
+               But usually they are divided up in Integers and Floating point numbers.
                First some code for integer Types, as they include
                decimal (base 10), hexadecimal (base 16), octal (base 8) and
                binary (base 2) notations (taken from
@@ -777,6 +805,104 @@ $a = 0b11111111;            // binary number (equivalent to 255 decimal)
 
                 </code>
             </pre>
+            <p>And as in JS there are some borders to MAX and MIN safe integers,
+               declared in PHP constants as follows - but hugely depending on your type of
+               System (e.g. 32 or 64 bit) and plattform (as on Windows prior to PHP 7,
+               they always were 32 bit):</p>
+            <pre>
+                <code class="php">
+/*
+ * My system is running PHP 7.2 on 64 bit Linux
+ */
+
+// The maximum Integer size in byte is:
+echo PHP_INT_SIZE;                      // outputs: 8
+
+// which leads to a maximum integer Number of:
+echo PHP_INT_MAX;                       // outputs: 9223372036854775807
+
+// and a minimum integer Number of:
+echo PHP_INT_MIN;                       // outputs: -9223372036854775808
+
+/*
+ * As in JS, integer overflows with very large numbers may occur
+ * - but whereas they get simply "rounded up" in JS, in PHP they
+ * get converted to a floating point number (or simply float):
+ */
+var_dump(PHP_INT_MAX + 1);              // outputs: float 9.2233720368548E+18
+
+                </code>
+            </pre>
+            <p>Which was a great way to switch to floating point numbers in PHP,
+               which have the same precision as in JS (IEEE 754 double precision format)
+               or as
+               <a href="https://secure.php.net/manual/en/language.types.float.php#warn.float-precision"
+                  target="_blank"
+                  rel="noopener noreferrer">php.net warns</a>:</p>
+            <blockquote>
+                <i class="fas fa-quote-right"></i>
+                Floating point numbers have limited precision. Although it depends
+                on the system, PHP typically uses the IEEE 754 double precision
+                format, which will give a maximum relative error due to rounding
+                in the order of 1.11e-16. Non elementary arithmetic operations
+                may give larger errors, and, of course, error propagation must
+                be considered when several operations are compounded.
+                [...]
+                So never trust floating number results to the last digit,
+                and do not compare floating point numbers directly for equality.
+            </blockquote>
+            <p>But let some code speak for itself:</p>
+            <pre>
+                <code class="php">
+// Floating point numbers (float or "real numbers") can be specified as such:
+$standard    = 1.234;
+var_dump($standard);                    // outputs: float 1.234
+
+$exponential = 1.2e3;
+var_dump($exponential);                 // outputs: float 1200
+
+$scientific  = 7E-10;
+var_dump($scientific);                  // outputs: float 7.0E-10
+// Or easier understandable:
+$positive_scientitific = 7E10;
+var_dump($positive_scientitific);       // outputs: float 70000000000
+
+// And adhere to the warning above, be careful with comparing floats:
+$a = 40 - 17.0;
+var_dump($a);                           // outputs: float 23
+$b = 23.0;
+var_dump($b);                           // outputs: float 23
+var_dump($a == $b);                     // outputs: boolean true
+
+// That was as "expected". Whereas:
+$x = 60 - 17.77;
+var_dump($x);                           // outputs: float 42.23
+$y = 42.23;
+var_dump($y);                           // outputs: float 42.23
+var_dump($x == $y);                     // outputs: boolean false
+
+                </code>
+            </pre>
+            <p>Since <a href="https://secure.php.net/manual/en/migration72.constants.php"
+                        target="_blank"
+                        rel="noopener noreferrer">PHP 7.2.0</a> there are some global
+               constants that provide some insights into the "depths" of floating
+               point numbers, as with integers above:</p>
+            <pre>
+                <code class="php">
+// Number of decimal digits that can be rounded into a
+// float and back without precision loss.
+echo PHP_FLOAT_DIG;                     // outputs: 15
+// Smallest representable floating point number.
+echo PHP_FLOAT_MIN;                     // outputs: 2.2250738585072E-308
+// Largest representable floating point number.
+echo PHP_FLOAT_MAX;                     // outputs: 1.7976931348623E+308
+// Smallest representable positive number x, so that x + 1.0 != 1.0.
+echo PHP_FLOAT_EPSILON;                 // outputs: 2.2204460492503E-16
+
+                </code>
+            </pre>
+
         </article>
     </section>
 </main>
