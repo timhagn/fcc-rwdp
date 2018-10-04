@@ -794,7 +794,7 @@ console.log(giveMeBinary.toString(2));          // outputs: 100000
                binary (base 2) notations (taken from
                <a href="https://secure.php.net/manual/en/language.types.integer.php"
                   target="_blank"
-                  rel="noopener noreferrer">"Integers" on php.net</a>:</p>
+                  rel="noopener noreferrer">"Integers" on php.net</a>):</p>
 
             <pre>
                 <code class="php">
@@ -926,7 +926,31 @@ echo PHP_FLOAT_EPSILON;                 // outputs: 2.2204460492503E-16
             </ul>
             <br />
             <h3 id="py_num">Python numeric types</h3>
-            <p>The python calculator calculates your calculations...</p>
+            <p>Python (speaking of the default <code>python</code> interpreter!)
+               comes with some different numeric types built-in.
+               As in PHP and JS they are exchangeable but with some more enforcement.
+               Because in python all numeric types are classes on their own, as
+               you are going to see next. The built-in numeric types in Python are
+               called "int", "float" and "complex" (the latter a mathematical type,
+               more <a href="https://en.wikipedia.org/wiki/Complex_number"
+                       target="_blank"
+                       rel="noopener noreferrer">here</a> and are called as follows:</p>
+            <pre>
+                <code class="python">
+# First a variable of type "int":
+integer = 1
+print(type(integer))                # outputs: class 'int'
+
+# Now a variable of type "float":
+floating_point = 1.0
+print(type(floating_point))         # outputs: class 'float'
+
+# And a variable of type "complex":
+complex_number = 1+2j
+print(type(complex_number))         # outputs: class 'complex'
+
+                </code>
+            </pre>
         </article>
     </section>
 </main>

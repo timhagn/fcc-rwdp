@@ -21,6 +21,11 @@ a {
 a:hover {
   background-color: #333;
 }
+@media (max-width: 641px) {
+  a {
+    text-decoration: underline;
+  }
+}
 
 hr {
   border-style: dotted;
@@ -231,6 +236,8 @@ hr {
 }
 #main-doc code {
   padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #2b2b2b;
 }
 #main-doc code td.hljs-ln-numbers {
   user-select: none;
