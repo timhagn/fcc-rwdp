@@ -236,13 +236,14 @@ Namespaces are one honking great idea -- let's do more of those!
         <article>
         <p>All three languages share a common similarity in interpreted scripting
            languages:<br />
-           Variables are (by default) dynamically typed (with some exception(s ; ) in
-           Python, as you are going to see).<br />
-           But whereas JS and PHP can be urged to enforce some level of strict
-           typing and provide some kinds of defining a "constant" (unchangeable,
-           read-only variables), Python only "enforces" the latter by coding
-           standards, or some "tricks" as shown below (for all of you coming from
-           JS-Land, you might cry "hurray" at inbuilt im-/mutability for some types).</p>
+           Variables are (by default) dynamically typed (with some exception(s ; )
+           in Python, as you are going to see).<br />
+           But whereas PHP can be urged to enforce some level of strict
+           typing and JS and it both provide some kinds of defining a "constant"
+           (unchangeable, read-only variables), Python enforces the first with
+           some types and not others and the latter by coding standards, or some
+           "tricks" as shown below (for all of you coming from JS-Land, you might
+           cry "hurray" at inbuilt im-/mutability for some types).</p>
         <h3>JavaScript</h3>
         <p>Let's first take a dive into JS, where one can use any Unicode character
            and only has to conform to certain rules, as taken from
@@ -586,7 +587,7 @@ print(constant)             # and again outputs: "gotcha" : /
                     </td>
                     <td class="immutable">
                         <a href="#py_num">
-                        int, float, complex
+                        int, float, complex, (decimal)
                         </a>
                     </td>
                 </tr>
