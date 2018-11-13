@@ -1,0 +1,1 @@
+{"version":3,"sources":["../sf.js"],"names":["projectName","localStorage","setItem"],"mappings":";;AAAA,IAAMA,WAAW,GAAG,aAApB;AACAC,YAAY,CAACC,OAAb,CAAqB,iBAArB,EAAwC,aAAxC","sourcesContent":["const projectName = 'survey-form';\nlocalStorage.setItem('example_project', 'Survey Form');"],"file":"sf.js"}

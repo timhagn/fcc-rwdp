@@ -1,0 +1,1 @@
+{"version":3,"sources":["../tp.js"],"names":["projectName","localStorage","setItem"],"mappings":";;AAAA,IAAMA,WAAW,GAAG,cAApB;AACAC,YAAY,CAACC,OAAb,CAAqB,iBAArB,EAAwC,cAAxC","sourcesContent":["const projectName = 'tribute-page';\nlocalStorage.setItem('example_project', 'Tribute Page');"],"file":"tp.js"}

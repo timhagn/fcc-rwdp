@@ -1,0 +1,1 @@
+{"version":3,"sources":["../plp.js"],"names":["projectName","localStorage","setItem"],"mappings":";;AAAA,IAAMA,WAAW,GAAG,sBAApB;AACAC,YAAY,CAACC,OAAb,CAAqB,iBAArB,EAAwC,sBAAxC","sourcesContent":["const projectName = 'product-landing-page';\nlocalStorage.setItem('example_project', 'Product Landing Page');"],"file":"plp.js"}
